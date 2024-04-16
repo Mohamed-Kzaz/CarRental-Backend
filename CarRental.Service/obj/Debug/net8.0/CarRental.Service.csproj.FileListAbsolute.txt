@@ -1,0 +1,15 @@
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Service\bin\Debug\net8.0\CarRental.Service.deps.json
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Service\bin\Debug\net8.0\CarRental.Service.dll
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Service\bin\Debug\net8.0\CarRental.Service.pdb
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Service\bin\Debug\net8.0\CarRental.Core.dll
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Service\bin\Debug\net8.0\CarRental.Core.pdb
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Service\obj\Debug\net8.0\CarRental.Service.csproj.AssemblyReference.cache
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Service\obj\Debug\net8.0\CarRental.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Service\obj\Debug\net8.0\CarRental.Service.AssemblyInfoInputs.cache
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Service\obj\Debug\net8.0\CarRental.Service.AssemblyInfo.cs
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Service\obj\Debug\net8.0\CarRental.Service.csproj.CoreCompileInputs.cache
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Service\obj\Debug\net8.0\CarRental.Service.csproj.CopyComplete
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Service\obj\Debug\net8.0\CarRental.Service.dll
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Service\obj\Debug\net8.0\refint\CarRental.Service.dll
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Service\obj\Debug\net8.0\CarRental.Service.pdb
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Service\obj\Debug\net8.0\ref\CarRental.Service.dll

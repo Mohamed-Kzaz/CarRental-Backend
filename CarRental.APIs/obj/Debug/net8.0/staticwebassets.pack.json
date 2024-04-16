@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\9ba67d65-223a-4543-a844-af35d8894850TS Terminal.PNG",
+      "PackagePath": "staticwebassets\\files\\images\\9ba67d65-223a-4543-a844-af35d8894850TS Terminal.PNG"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CarRental.APIs.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CarRental.APIs.props",
+      "PackagePath": "build\\CarRental.APIs.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CarRental.APIs.props",
+      "PackagePath": "buildMultiTargeting\\CarRental.APIs.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CarRental.APIs.props",
+      "PackagePath": "buildTransitive\\CarRental.APIs.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
