@@ -56,7 +56,7 @@ namespace CarRental.APIs.Controllers
             if (!result.Succeeded)
                 return BadRequest(new { Message = "Something wrong happened when register!!" });
 
-            return Ok();
+            return Ok(new { message = "you are registered successfully" });
         }
 
         [HttpPost("login")]
@@ -70,12 +70,13 @@ namespace CarRental.APIs.Controllers
             var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
 
             if (!result.Succeeded)
-                return Unauthorized(new { Message = "Email or Password is not Valid!!"});
+                return Unauthorized(new { Message = "Password is not Valid!!" });
 
             return Ok(new UserDto()
             {
                 Email = user.Email,
-                Token = await _tokenService.CreateTokenAsync(user, _userManager)
+                Token = await _tokenService.CreateTokenAsync(user, _userManager),
+                Message = "you are logined successfully"
             });
         }
 

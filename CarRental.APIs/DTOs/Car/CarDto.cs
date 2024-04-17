@@ -9,7 +9,7 @@ namespace CarRental.APIs.DTOs.Car
         public string Brand { get; set; }
 
         [Required(ErrorMessage = "Model is required!")]
-        public string Model { get; set; }
+        public string Modell { get; set; }
 
         [Range(2005, 2024, ErrorMessage = "Car model must be within range 2005 to 2024")]
         [Required(ErrorMessage = "Year is required!")]
@@ -34,6 +34,6 @@ namespace CarRental.APIs.DTOs.Car
         [Required(ErrorMessage = "IsAvailable is required!")]
         public bool IsAvailable { get; set; } 
 
-        public string OwnerId { get; set; }
+        public string? OwnerId { get; set; } 
     }
 }

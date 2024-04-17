@@ -13,3 +13,4 @@ C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Repository\obj\Debug
 C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Repository\obj\Debug\net8.0\refint\CarRental.Repository.dll
 C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Repository\obj\Debug\net8.0\CarRental.Repository.pdb
 C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Repository\obj\Debug\net8.0\ref\CarRental.Repository.dll
+C:\Users\moham\OneDrive\Desktop\ASP API\CarRental\CarRental.Repository\obj\Debug\net8.0\CarRental.Repository.sourcelink.json

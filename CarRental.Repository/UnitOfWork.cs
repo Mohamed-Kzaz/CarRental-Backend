@@ -11,10 +11,12 @@ namespace CarRental.Repository
     public class UnitOfWork : IUnitOfWork
     {
         public ICarRepository CarRepository { get; set; }
+        public IRentalRepository RentalRepository { get; set; }
 
-        public UnitOfWork(ICarRepository carRepository)
+        public UnitOfWork(ICarRepository carRepository, IRentalRepository rentalRepository)
         {
             CarRepository = carRepository;
+            RentalRepository = rentalRepository;
         }
 
     }

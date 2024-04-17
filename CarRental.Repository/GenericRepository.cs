@@ -29,10 +29,10 @@ namespace CarRental.Repository
             return await dbContext.SaveChangesAsync();
         }
 
-        public async void Update(T entity)
+        public async Task<int> Update(T entity)
         {
             dbContext.Set<T>().Update(entity);
-            await dbContext.SaveChangesAsync();
+            return await dbContext.SaveChangesAsync();
         }
 
         public async Task<int> Delete(T entity)

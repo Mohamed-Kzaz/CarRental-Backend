@@ -10,5 +10,6 @@ namespace CarRental.Core
     public interface IUnitOfWork
     {
         public ICarRepository CarRepository { get; set; }
+        public IRentalRepository RentalRepository { get; set; }
     }
 }

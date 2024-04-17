@@ -12,7 +12,7 @@ namespace CarRental.Core.Repositories
         Task<IReadOnlyList<T>> GetAllAsync();
         Task<T> GetByIdAsync(int id);
         Task<int> Add(T entity);
-        void Update(T entity);
+        Task<int> Update(T entity);
         Task<int> Delete(T entity);
     }
 }

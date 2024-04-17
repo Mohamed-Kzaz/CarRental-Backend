@@ -6,6 +6,7 @@ using CarRental.Core.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Drawing;
 
 namespace CarRental.APIs.Controllers
 {
@@ -25,6 +26,10 @@ namespace CarRental.APIs.Controllers
         public async Task<IActionResult> GetAllAsync()
         {
             var cars = await _unitOfWork.CarRepository.GetAllAsync();
+            if (cars == null)
+            {
+                return NotFound(new { message = "Cars are not found" });
+            }
             return Ok(cars);
         }
 
@@ -34,7 +39,7 @@ namespace CarRental.APIs.Controllers
             var car = await _unitOfWork.CarRepository.GetByIdAsync(id);
 
             if (car == null)
-                return NotFound("Car not found");
+                return NotFound(new { message = "Car are not found" });
 
             return Ok(car);
         }
@@ -51,7 +56,7 @@ namespace CarRental.APIs.Controllers
             Car car = new Car()
             {
                 Brand = model.Brand,
-                Model = model.Model,
+                Model = model.Modell,
                 Year = model.Year,
                 Color = model.Color,
                 CarImageURL = carURL,
@@ -64,9 +69,37 @@ namespace CarRental.APIs.Controllers
 
             await _unitOfWork.CarRepository.Add(car);
 
-            return Ok("Added Successfully");
+            return Ok(new { message = "Car is added successfully" });
         }
 
+        [Authorize]
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateAsync(int id, [FromForm] CarDto model)
+        {
+            var car = await _unitOfWork.CarRepository.GetByIdAsync(id);
+
+            if (car == null)
+                return NotFound("No car was found with ID");
+
+            var carURL = DocumentSettings.UploadFile(model.CarImage, "images");
+
+            car.Brand = model.Brand;
+            car.Model = model.Modell;
+            car.Year = model.Year;
+            car.Color = model.Color;
+            car.CarImageURL = carURL;
+            car.Trans_Type = model.Trans_Type;
+            car.Seats = model.Seats;
+            car.Cost_Per_Day = model.Cost_Per_Day;
+            car.IsAvailable = model.IsAvailable;
+            car.OwnerId = car.OwnerId;
+
+            await _unitOfWork.CarRepository.Update(car);
+
+            return Ok(new { message = "Car is updated successfully", car = car });
+        }
+
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
