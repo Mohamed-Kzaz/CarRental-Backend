@@ -66,6 +66,14 @@ namespace CarRental.APIs
 
                 c.AddSecurityRequirement(securityRequirment);
             });
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("MyPolicy", options =>
+                {
+                    options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().SetIsOriginAllowed(origin => true); ;
+                });
+            });
             #endregion
 
             var app = builder.Build();
@@ -80,6 +88,8 @@ namespace CarRental.APIs
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
+
+            app.UseCors("MyPolicy");
 
             app.UseAuthentication();
 
