@@ -10,18 +10,18 @@ using System.Threading.Tasks;
 
 namespace CarRental.Repository
 {
-    public class CarRepository : GenericRepository<Car>, ICarRepository
+    public class ReviewRepository : GenericRepository<Review>, IReviewRepository
     {
         private readonly CarRentalContext dbContext;
 
-        public CarRepository(CarRentalContext _dbContext) : base(_dbContext)
+        public ReviewRepository(CarRentalContext _dbContext) : base(_dbContext)
         {
             dbContext = _dbContext;
         }
 
-        public async Task<IList<Car>> GetAllCarsForOwner(string ownerId)
+        public async Task<IReadOnlyList<Review>> GetAllReviwsForCar(int carId)
         {
-            return await dbContext.Cars.Where(c => c.OwnerId == ownerId).ToListAsync();    
+            return await dbContext.Reviews.Where(r => r.Rental.CarId == carId).ToListAsync();
         }
     }
 }

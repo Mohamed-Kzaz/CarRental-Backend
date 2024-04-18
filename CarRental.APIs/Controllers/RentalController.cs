@@ -47,7 +47,7 @@ namespace CarRental.APIs.Controllers
 
             await UpdateAvailability(model.CarId);
 
-            return Ok(new { message = "Rental is added successfully", Availability = car.IsAvailable});
+            return Ok(new { message = "Rental is added successfully", Availability = car.IsAvailable, RentalID = rental.Id});
         }
 
         [HttpPut("{id}")]
@@ -55,11 +55,12 @@ namespace CarRental.APIs.Controllers
         {
             var car = await _unitOfWork.CarRepository.GetByIdAsync(id);
 
-            car.IsAvailable = false;
+            car.IsAvailable = !car.IsAvailable;
 
             await _unitOfWork.CarRepository.Update(car);
 
             return Ok(car);
         }
+
     }
 }

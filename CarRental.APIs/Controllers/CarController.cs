@@ -21,6 +21,16 @@ namespace CarRental.APIs.Controllers
             _unitOfWork = unitOfWork;
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAllCarsByOwnerId(string id)
+        {
+            var cars = await _unitOfWork.CarRepository.GetAllCarsForOwner(id);
+            if (cars == null)
+            {
+                return NotFound(new { message = "you have not added cars yet" });
+            }
+            return Ok(cars);
+        }
 
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
@@ -33,7 +43,7 @@ namespace CarRental.APIs.Controllers
             return Ok(cars);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("getallcars/{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             var car = await _unitOfWork.CarRepository.GetByIdAsync(id);
@@ -44,7 +54,7 @@ namespace CarRental.APIs.Controllers
             return Ok(car);
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public async Task<IActionResult> AddCar([FromForm] CarDto model)
         {

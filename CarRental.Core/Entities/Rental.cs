@@ -28,7 +28,6 @@ namespace CarRental.Core.Entities
         public int CarId { get; set; }
         public virtual Car Car { get; set; }
 
-        public virtual ICollection<CarRentalDamage> CarRentalDamages { get; set; } = new HashSet<CarRentalDamage>();
         public virtual ICollection<Review> Reviews { get; set; } = new HashSet<Review>();
 
     }

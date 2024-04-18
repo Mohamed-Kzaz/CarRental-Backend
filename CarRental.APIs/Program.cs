@@ -28,6 +28,7 @@ namespace CarRental.APIs
 
             builder.Services.AddScoped<ICarRepository, CarRepository>();
             builder.Services.AddScoped<IRentalRepository, RentalRepository>();
+            builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             // We Call Method Which Contain All Services of Identity

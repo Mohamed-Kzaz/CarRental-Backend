@@ -11,5 +11,6 @@ namespace CarRental.Core
     {
         public ICarRepository CarRepository { get; set; }
         public IRentalRepository RentalRepository { get; set; }
+        public IReviewRepository ReviewRepository { get; set; }
     }
 }

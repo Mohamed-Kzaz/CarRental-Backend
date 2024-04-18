@@ -26,7 +26,6 @@ namespace CarRental.Core.Entities
         public virtual ApplicationUser User { get; set; }
 
         public virtual ICollection<Rental> Rentals { get; set; } = new HashSet<Rental>();
-        public virtual ICollection<CarRentalDamage> CarRentalDamages { get; set; } = new HashSet<CarRentalDamage>();
 
     }
 }

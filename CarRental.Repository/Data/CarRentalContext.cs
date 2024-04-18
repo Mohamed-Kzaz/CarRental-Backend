@@ -16,18 +16,10 @@ namespace CarRental.Repository.Data
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<CarRentalDamage>().HasKey(k => new { k.RentId, k.CarId, k.DmgId });
-           
-        }
+      
 
         public DbSet<Car> Cars { get; set; }
         public DbSet<Rental> Rentals { get; set; }
         public DbSet<Review> Reviews { get; set; }
-        public DbSet<DamageReport> DamageReports { get; set; }
-        public DbSet<CarRentalDamage> CarRentalDamages { get; set; }
-      
     }
 }
