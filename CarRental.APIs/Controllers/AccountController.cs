@@ -29,7 +29,7 @@ namespace CarRental.APIs.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult> Register(RegisterDto model)
+        public async Task<ActionResult> Register([FromForm]RegisterDto model)
         {
             if (CheckEmailExists(model.Email).Result.Value)
                 return BadRequest(new { Message = "Email is already exist" });
@@ -54,9 +54,9 @@ namespace CarRental.APIs.Controllers
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (!result.Succeeded)
-                return BadRequest(new { Message = "Something wrong happened when register!!" });
+                return BadRequest(new { Message = "Something wrong happened when register!"});
 
-            return Ok(new { message = "you are registered successfully" });
+            return Ok(new {message="success"});
         }
 
         [HttpPost("login")]
@@ -74,9 +74,9 @@ namespace CarRental.APIs.Controllers
 
             return Ok(new UserDto()
             {
-                Email = user.Email,
+                UserName = user.UserName,
                 Token = await _tokenService.CreateTokenAsync(user, _userManager),
-                Message = "you are logined successfully"
+                Message = "success"
             });
         }
 
