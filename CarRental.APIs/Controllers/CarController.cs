@@ -36,10 +36,19 @@ namespace CarRental.APIs.Controllers
         public async Task<IActionResult> GetAllAsync()
         {
             var cars = await _unitOfWork.CarRepository.GetAllAsync();
+
             if (cars == null)
             {
                 return NotFound(new { message = "Cars are not found" });
             }
+
+            var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/";
+
+            foreach (var car in cars)
+            {
+                car.CarImageURL = baseUrl + car.CarImageURL;
+            }
+
             return Ok(cars);
         }
 
@@ -50,6 +59,10 @@ namespace CarRental.APIs.Controllers
 
             if (car == null)
                 return NotFound(new { message = "Car are not found" });
+
+            var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/";
+
+            car.CarImageURL = baseUrl + car.CarImageURL;
 
             return Ok(car);
         }

@@ -78,6 +78,11 @@ namespace CarRental.APIs
 
             var app = builder.Build();
 
+            // For Identity Seed
+            using var scope = app.Services.CreateScope();
+            var services = scope.ServiceProvider;
+            IdentitySeed. SeedUserAsync(services);
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {

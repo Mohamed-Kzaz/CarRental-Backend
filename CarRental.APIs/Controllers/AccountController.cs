@@ -56,6 +56,8 @@ namespace CarRental.APIs.Controllers
             if (!result.Succeeded)
                 return BadRequest(new { Message = "Something wrong happened when register!"});
 
+            await _userManager.AddToRoleAsync(user, "User");
+
             return Ok(new {message="success"});
         }
 
