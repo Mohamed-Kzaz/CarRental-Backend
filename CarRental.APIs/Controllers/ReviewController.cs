@@ -19,11 +19,26 @@ namespace CarRental.APIs.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IReadOnlyList<Review>>> GetById(int id)
+        public async Task<ActionResult<IReadOnlyList<ReviewToReturnDto>>> GetById(int id)
         {
-            var reviws = await _unitOfWork.ReviewRepository.GetAllReviwsForCar(id);
+            var reviews = await _unitOfWork.ReviewRepository.GetAllReviwsForCar(id);
 
-            return Ok(reviws);
+            var mappedReviews = new List<ReviewToReturnDto>();
+
+            foreach (var review in reviews)
+            {
+                var mappedReview = new ReviewToReturnDto
+                {
+                    Rating = review.Rating,
+                    Comment = review.Comment,
+                    UserName = review.Rental.User.UserName
+                };
+
+                mappedReviews.Add(mappedReview);
+            }
+
+
+            return Ok(mappedReviews);
         }
 
         [HttpPost]

@@ -21,7 +21,7 @@ namespace CarRental.Repository
 
         public async Task<IReadOnlyList<Review>> GetAllReviwsForCar(int carId)
         {
-            return await dbContext.Reviews.Where(r => r.Rental.CarId == carId).ToListAsync();
+            return await dbContext.Reviews.Include(r => r.Rental).ThenInclude(re => re.User).Where(r => r.Rental.CarId == carId).ToListAsync();
         }
     }
 }

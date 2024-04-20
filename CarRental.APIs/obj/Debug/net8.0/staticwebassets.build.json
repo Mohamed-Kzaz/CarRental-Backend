@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6ZwKS+nEc1BJneh02IptHJ59CvAFkpS38iK9MyPxqY0=",
+  "Hash": "KEoL1Xtj3DlhUPnn7IoG4QjCJ3eTA0sOeRyeeQrPVxw=",
   "Source": "CarRental.APIs",
   "BasePath": "_content/CarRental.APIs",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\18da405b-6fdd-4173-a077-df38cf34d68dBMW.jpg",
+      "SourceId": "CarRental.APIs",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\",
+      "BasePath": "_content/CarRental.APIs",
+      "RelativePath": "files/images/18da405b-6fdd-4173-a077-df38cf34d68dBMW.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\images\\18da405b-6fdd-4173-a077-df38cf34d68dBMW.jpg"
+    },
     {
       "Identity": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\3e2964f4-218b-454d-b734-8968c93a96b6BMW.jpg",
       "SourceId": "CarRental.APIs",
@@ -34,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\files\\images\\3e2964f4-218b-454d-b734-8968c93a96b6BMW.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\4c3c2095-a365-4bb5-bdfb-b0ee4cabf14eCar Table.PNG",
+      "SourceId": "CarRental.APIs",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\",
+      "BasePath": "_content/CarRental.APIs",
+      "RelativePath": "files/images/4c3c2095-a365-4bb5-bdfb-b0ee4cabf14eCar Table.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\images\\4c3c2095-a365-4bb5-bdfb-b0ee4cabf14eCar Table.PNG"
     },
     {
       "Identity": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\4ee62302-b493-456d-af37-9b163684c890BMW.jpg",
@@ -186,6 +224,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\files\\images\\e405d49e-f755-433a-b3ae-36ff750cf1e8BMW.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\fe036653-5217-461b-bad5-3b59d9d2c60dBMW.jpg",
+      "SourceId": "CarRental.APIs",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\",
+      "BasePath": "_content/CarRental.APIs",
+      "RelativePath": "files/images/fe036653-5217-461b-bad5-3b59d9d2c60dBMW.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\images\\fe036653-5217-461b-bad5-3b59d9d2c60dBMW.jpg"
     }
   ]
 }
