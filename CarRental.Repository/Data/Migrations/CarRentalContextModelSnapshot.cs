@@ -177,9 +177,6 @@ namespace CarRental.Repository.Data.Migrations
                     b.Property<DateTime>("Pay_Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Pay_Id")
-                        .HasColumnType("int");
-
                     b.Property<string>("Pick_Location")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

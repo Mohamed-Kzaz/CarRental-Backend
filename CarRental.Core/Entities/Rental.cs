@@ -10,7 +10,6 @@ namespace CarRental.Core.Entities
     public class Rental
     {
         public int Id { get; set; }
-        public int Pay_Id { get; set; }
         public DateTime Start_Date { get; set; }
         public DateTime End_Date { get; set; }
         public int Total_Cost { get; set; }

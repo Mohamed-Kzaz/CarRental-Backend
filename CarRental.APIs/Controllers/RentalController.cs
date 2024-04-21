@@ -25,19 +25,19 @@ namespace CarRental.APIs.Controllers
 
             var car = await _unitOfWork.CarRepository.GetByIdAsync(model.CarId);
 
-            if(!car.IsAvailable is true)
-                return BadRequest(new {message = "Car is not available now"});
+            if (!car.IsAvailable is true)
+                return BadRequest(new { message = "Car is not available now" });
 
-            var totalDays = _unitOfWork.RentalRepository.GetTotalDays(model.Start_Date, model.End_Date);
+            var totalCost = GetTotalPrice(car.Cost_Per_Day, model.Start_Date, model.End_Date);
 
             Rental rental = new Rental()
             {
                 Start_Date = model.Start_Date,
                 End_Date = model.End_Date,
-                Total_Cost = car.Cost_Per_Day * totalDays,
+                Total_Cost = totalCost,
                 Pick_Location = model.Pick_Location,
                 Ret_Location = model.Ret_Location,
-                Pay_Date = DateTime.Now,
+                Pay_Date = model.Pay_Date,
                 Trans_Id = model.Trans_Id,
                 CarId = model.CarId,
                 ClientId = model.ClientId
@@ -47,7 +47,17 @@ namespace CarRental.APIs.Controllers
 
             await UpdateAvailability(model.CarId);
 
-            return Ok(new { message = "Rental is added successfully", Availability = car.IsAvailable, RentalID = rental.Id});
+            return Ok(new { message = "Rental is added successfully", Availability = car.IsAvailable, RentalID = rental.Id, TotalCost = totalCost });
+        }
+
+        [HttpGet("getTotalPrice")]
+        public int GetTotalPrice(int costPerDay, DateTime start, DateTime end)
+        {
+            var totalDays = _unitOfWork.RentalRepository.GetTotalDays(start, end);
+
+            var totalCost = totalDays * costPerDay;
+
+            return totalCost;
         }
 
         [HttpPut("{id}")]

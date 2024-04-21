@@ -10,8 +10,6 @@ namespace CarRental.APIs.DTOs.Rental
         [Required(ErrorMessage = "End Date is required!")]
         public DateTime End_Date { get; set; }
 
-        public int Total_Cost { get; set; }
-
         [Required(ErrorMessage = "Pick Location is required!")]
         public string Pick_Location { get; set; }
 
