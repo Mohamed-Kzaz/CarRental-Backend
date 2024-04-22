@@ -76,6 +76,7 @@ namespace CarRental.APIs.Controllers
 
             return Ok(new UserDto()
             {
+                Id=user.Id,
                 UserName = user.UserName,
                 Token = await _tokenService.CreateTokenAsync(user, _userManager),
                 Message = "success"
