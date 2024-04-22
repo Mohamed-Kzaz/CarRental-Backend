@@ -18,7 +18,7 @@ namespace CarRental.APIs.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add([FromForm] RentalDto model)
+        public async Task<IActionResult> Add([FromBody] RentalDto model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -69,7 +69,7 @@ namespace CarRental.APIs.Controllers
 
             await _unitOfWork.CarRepository.Update(car);
 
-            return Ok(car);
+            return Ok(new { Car = car, message = "success" });
         }
 
     }

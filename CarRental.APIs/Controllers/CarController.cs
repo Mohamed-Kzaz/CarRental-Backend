@@ -25,9 +25,16 @@ namespace CarRental.APIs.Controllers
         public async Task<IActionResult> GetAllCarsByOwnerId(string id)
         {
             var cars = await _unitOfWork.CarRepository.GetAllCarsForOwner(id);
+
             if (cars == null)
             {
                 return NotFound(new { message = "you have not added cars yet" });
+            }
+            var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/";
+
+            foreach (var car in cars)
+            {
+                car.CarImageURL = baseUrl + car.CarImageURL;
             }
             return Ok(cars);
         }
@@ -122,7 +129,7 @@ namespace CarRental.APIs.Controllers
             return Ok(new { message = "Car is updated successfully", car = car });
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
@@ -133,7 +140,7 @@ namespace CarRental.APIs.Controllers
 
             DocumentSettings.DeleteFile(car.CarImageURL, "images");
 
-            _unitOfWork.CarRepository.Delete(car);
+            await _unitOfWork.CarRepository.Delete(car);
 
             return Ok(car);
         }
