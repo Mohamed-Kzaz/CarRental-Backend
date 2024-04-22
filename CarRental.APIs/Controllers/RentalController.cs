@@ -1,4 +1,5 @@
 ﻿using CarRental.APIs.DTOs.Rental;
+using CarRental.APIs.DTOs.Review;
 using CarRental.Core;
 using CarRental.Core.Entities;
 using Microsoft.AspNetCore.Http;
@@ -15,6 +16,37 @@ namespace CarRental.APIs.Controllers
         public RentalController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAllRentalsByClientId(string id)
+        {
+            var rentals = await _unitOfWork.RentalRepository.GetAllRentalsForClient(id);
+
+            if (rentals == null)
+            {
+                return NotFound(new { message = "Haven't rented a car yet" });
+            }
+
+            var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/";
+
+            var mappedRentals = new List<RentalToReturnDto>();
+
+            foreach (var rental in rentals)
+            {
+                var mappedRental = new RentalToReturnDto
+                {
+                    Start_Date = rental.Start_Date,
+                    End_Date = rental.End_Date,
+                    Total_Cost = rental.Total_Cost,
+                    Pick_Location = rental.Pick_Location,
+                    Ret_Location = rental.Ret_Location,
+                    CarImageURL = baseUrl + rental.Car.CarImageURL
+                };
+
+                mappedRentals.Add(mappedRental);
+            }
+            return Ok(mappedRentals);
         }
 
         [HttpPost]

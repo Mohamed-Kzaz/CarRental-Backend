@@ -1,6 +1,7 @@
 ﻿using CarRental.Core.Entities;
 using CarRental.Core.Repositories;
 using CarRental.Repository.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,11 @@ namespace CarRental.Repository
             TimeSpan span = endDate - startDate;
 
             return span.Days + 1;
+        }
+
+        public async Task<IList<Rental>> GetAllRentalsForClient(string clientId)
+        {
+            return await dbContext.Rentals.Include(r => r.Car).Where(c => c.ClientId == clientId).ToListAsync();
         }
     }
 }

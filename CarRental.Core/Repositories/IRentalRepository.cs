@@ -10,5 +10,8 @@ namespace CarRental.Core.Repositories
     public interface IRentalRepository : IGenericRepository<Rental>
     {
         int GetTotalDays(DateTime startDate, DateTime endDate);
+
+        Task<IList<Rental>> GetAllRentalsForClient(string clientId);
+
     }
 }
