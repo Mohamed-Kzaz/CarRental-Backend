@@ -19,9 +19,19 @@ namespace CarRental.Repository
             dbContext = _dbContext;
         }
 
+        public async Task<IList<Car>> GetAllCarsExceptOnwerCar(string ownerId)
+        {
+            return await dbContext.Cars.Include(c => c.User).Where(c => c.OwnerId != ownerId).ToListAsync();
+        }
+
         public async Task<IList<Car>> GetAllCarsForOwner(string ownerId)
         {
-            return await dbContext.Cars.Where(c => c.OwnerId == ownerId).ToListAsync();    
+            return await dbContext.Cars.Include(c => c.User).Where(c => c.OwnerId == ownerId).ToListAsync();
+        }
+
+        public async Task<Car> GetCarById(int carId)
+        {
+            return await dbContext.Cars.Include(c => c.User).FirstOrDefaultAsync(c => c.Id == carId);
         }
     }
 }

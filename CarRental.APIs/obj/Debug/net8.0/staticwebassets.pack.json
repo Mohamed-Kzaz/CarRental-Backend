@@ -1,68 +1,20 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\073eaf8f-2699-41b1-9681-1b6260d6a3e1download.jpeg",
-      "PackagePath": "staticwebassets\\files\\images\\073eaf8f-2699-41b1-9681-1b6260d6a3e1download.jpeg"
+      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\6b427ea2-63e3-4fb8-b5b7-fc151fad6f31Formal.jpg",
+      "PackagePath": "staticwebassets\\files\\images\\6b427ea2-63e3-4fb8-b5b7-fc151fad6f31Formal.jpg"
     },
     {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\18da405b-6fdd-4173-a077-df38cf34d68dBMW.jpg",
-      "PackagePath": "staticwebassets\\files\\images\\18da405b-6fdd-4173-a077-df38cf34d68dBMW.jpg"
+      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\f5d628fb-c34f-41a4-ba55-9a06b7c84b61BMW.jpg",
+      "PackagePath": "staticwebassets\\files\\images\\f5d628fb-c34f-41a4-ba55-9a06b7c84b61BMW.jpg"
     },
     {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\3e2964f4-218b-454d-b734-8968c93a96b6BMW.jpg",
-      "PackagePath": "staticwebassets\\files\\images\\3e2964f4-218b-454d-b734-8968c93a96b6BMW.jpg"
+      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\fbd45881-b194-4e16-ba4d-34d4c13fcd42BMW.jpg",
+      "PackagePath": "staticwebassets\\files\\images\\fbd45881-b194-4e16-ba4d-34d4c13fcd42BMW.jpg"
     },
     {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\4c3c2095-a365-4bb5-bdfb-b0ee4cabf14eCar Table.PNG",
-      "PackagePath": "staticwebassets\\files\\images\\4c3c2095-a365-4bb5-bdfb-b0ee4cabf14eCar Table.PNG"
-    },
-    {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\4ee62302-b493-456d-af37-9b163684c890BMW.jpg",
-      "PackagePath": "staticwebassets\\files\\images\\4ee62302-b493-456d-af37-9b163684c890BMW.jpg"
-    },
-    {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\5646fbc1-a516-4c7e-98e9-66a4131348a9Screenshot_2.png",
-      "PackagePath": "staticwebassets\\files\\images\\5646fbc1-a516-4c7e-98e9-66a4131348a9Screenshot_2.png"
-    },
-    {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\689ccb44-2bda-491f-a1a1-ce45a64f0246Screenshot_3.png",
-      "PackagePath": "staticwebassets\\files\\images\\689ccb44-2bda-491f-a1a1-ce45a64f0246Screenshot_3.png"
-    },
-    {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\71938c73-11e1-4fe1-83ed-5465b5df23c5BMW.jpg",
-      "PackagePath": "staticwebassets\\files\\images\\71938c73-11e1-4fe1-83ed-5465b5df23c5BMW.jpg"
-    },
-    {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\783f5122-bdd6-4db3-a70b-ff3677d1285fBMW.jpg",
-      "PackagePath": "staticwebassets\\files\\images\\783f5122-bdd6-4db3-a70b-ff3677d1285fBMW.jpg"
-    },
-    {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\83730a5b-76af-45ec-b858-24868d10c350BMW.jpg",
-      "PackagePath": "staticwebassets\\files\\images\\83730a5b-76af-45ec-b858-24868d10c350BMW.jpg"
-    },
-    {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\9ba67d65-223a-4543-a844-af35d8894850TS Terminal.PNG",
-      "PackagePath": "staticwebassets\\files\\images\\9ba67d65-223a-4543-a844-af35d8894850TS Terminal.PNG"
-    },
-    {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\e12f6dff-1e52-41ed-970e-ba643172fc50download.jpeg",
-      "PackagePath": "staticwebassets\\files\\images\\e12f6dff-1e52-41ed-970e-ba643172fc50download.jpeg"
-    },
-    {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\e405d49e-f755-433a-b3ae-36ff750cf1e8BMW.jpg",
-      "PackagePath": "staticwebassets\\files\\images\\e405d49e-f755-433a-b3ae-36ff750cf1e8BMW.jpg"
-    },
-    {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\f0471e3d-eba4-46dc-8d27-00877d2ac2aadownload.jpeg",
-      "PackagePath": "staticwebassets\\files\\images\\f0471e3d-eba4-46dc-8d27-00877d2ac2aadownload.jpeg"
-    },
-    {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\f1937b5f-0362-4bb6-8150-91a939b5f084download.jpeg",
-      "PackagePath": "staticwebassets\\files\\images\\f1937b5f-0362-4bb6-8150-91a939b5f084download.jpeg"
-    },
-    {
-      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\fe036653-5217-461b-bad5-3b59d9d2c60dBMW.jpg",
-      "PackagePath": "staticwebassets\\files\\images\\fe036653-5217-461b-bad5-3b59d9d2c60dBMW.jpg"
+      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\wwwroot\\files\\images\\fec53fc1-30cb-429a-971a-cdd27ad4bd2cBMW.jpg",
+      "PackagePath": "staticwebassets\\files\\images\\fec53fc1-30cb-429a-971a-cdd27ad4bd2cBMW.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CarRental.APIs.Microsoft.AspNetCore.StaticWebAssets.props",

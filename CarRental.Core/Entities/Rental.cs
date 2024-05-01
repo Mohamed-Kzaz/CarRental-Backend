@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarRental.Core.Entities.Enum;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -12,11 +13,10 @@ namespace CarRental.Core.Entities
         public int Id { get; set; }
         public DateTime Start_Date { get; set; }
         public DateTime End_Date { get; set; }
-        public int Total_Cost { get; set; }
         public string Pick_Location { get; set; }
         public string Ret_Location { get; set; }
-        public DateTime Pay_Date { get; set; } = DateTime.Now;
-        public int Trans_Id { get; set; }
+        public int Total_Cost { get; set; }
+        public RentalStatus Status { get; set; }
 
         [ForeignKey("User")]
         public string ClientId { get; set; }

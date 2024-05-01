@@ -1,4 +1,5 @@
 ﻿using CarRental.Core.Entities;
+using CarRental.Core.Entities.Enum;
 using CarRental.Core.Repositories;
 using CarRental.Repository.Data;
 using Microsoft.EntityFrameworkCore;
@@ -28,5 +29,16 @@ namespace CarRental.Repository
         {
             return await dbContext.Rentals.Include(r => r.Car).Where(c => c.ClientId == clientId).ToListAsync();
         }
+
+        public async Task<IList<Rental>> GetAllReqForCarById(int carId)
+        {
+            return await dbContext.Rentals.Include(r => r.User).Where(r => r.CarId == carId && r.Status == RentalStatus.Pending).ToListAsync();
+        }
+
+        public async Task<IList<Rental>> GetAllReqPendAndRejForCarById(int carId)
+        {
+            return await dbContext.Rentals.Where(r => r.CarId == carId && r.Status == RentalStatus.Pending || r.Status == RentalStatus.Rejected).ToListAsync();
+        }
+
     }
 }

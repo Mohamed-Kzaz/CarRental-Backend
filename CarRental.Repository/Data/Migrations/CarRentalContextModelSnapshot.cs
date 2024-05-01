@@ -56,6 +56,10 @@ namespace CarRental.Repository.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImageProfileURl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -65,6 +69,10 @@ namespace CarRental.Repository.Data.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NationalIdURl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -174,9 +182,6 @@ namespace CarRental.Repository.Data.Migrations
                     b.Property<DateTime>("End_Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Pay_Date")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Pick_Location")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -188,10 +193,10 @@ namespace CarRental.Repository.Data.Migrations
                     b.Property<DateTime>("Start_Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Total_Cost")
+                    b.Property<int>("Status")
                         .HasColumnType("int");
 
-                    b.Property<int>("Trans_Id")
+                    b.Property<int>("Total_Cost")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

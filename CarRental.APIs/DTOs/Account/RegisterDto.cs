@@ -4,6 +4,9 @@ namespace CarRental.APIs.DTOs.Account
 {
     public class RegisterDto
     {
+        [Required(ErrorMessage = "Image Profile is required!")]
+        public IFormFile ImageProfile { get; set; }
+
         [Required(ErrorMessage = "First name is required!")]
         public string FName { get; set; }
 
@@ -31,6 +34,9 @@ namespace CarRental.APIs.DTOs.Account
 
         [Required(ErrorMessage = "Driving license is required!")]
         public IFormFile DrivingLic { get; set; }
+
+        [Required(ErrorMessage = "National ID Image is required!")]
+        public IFormFile NationalIdImage { get; set; }
 
         [Required(ErrorMessage = "Password is required!")]
         [DataType(DataType.Password)]

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CarRental.APIs.DTOs.Car;
+using CarRental.APIs.DTOs.Rental;
 using CarRental.APIs.Helper;
 using CarRental.Core;
 using CarRental.Core.Entities;
@@ -22,7 +23,7 @@ namespace CarRental.APIs.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetAllCarsByOwnerId(string id)
+        public async Task<ActionResult<CarToReturnDto>> GetAllCarsByOwnerId(string id)
         {
             var cars = await _unitOfWork.CarRepository.GetAllCarsForOwner(id);
 
@@ -32,17 +33,56 @@ namespace CarRental.APIs.Controllers
             }
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/";
 
+            var mappedCars = new List<CarToReturnDto>();
+
             foreach (var car in cars)
             {
-                car.CarImageURL = baseUrl + car.CarImageURL;
+                var mappedCar = new CarToReturnDto
+                {
+                    Id = car.Id,
+                    Brand = car.Brand,
+                    Model = car.Model,
+                    Year = car.Year,
+                    Color = car.Color,
+                    CarImageURL = baseUrl + car.CarImageURL,
+                    Trans_Type = car.Trans_Type,
+                    Seats = car.Seats,
+                    Cost_Per_Day = car.Cost_Per_Day,
+                    IsAvailable = car.IsAvailable,
+                    CarLocation = car.User.Address,
+                    OwnerId = car.OwnerId
+                };
+
+                mappedCars.Add(mappedCar);
             }
-            return Ok(cars);
+            return Ok(mappedCars);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAllAsync()
+        //[Authorize("Admin")]
+        //[HttpGet]
+        //public async Task<IActionResult> GetAllAsync()
+        //{
+        //    var cars = await _unitOfWork.CarRepository.GetAllAsync();
+
+        //    if (cars == null)
+        //    {
+        //        return NotFound(new { message = "Cars are not found" });
+        //    }
+
+        //    var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/";
+
+        //    foreach (var car in cars)
+        //    {
+        //        car.CarImageURL = baseUrl + car.CarImageURL;
+        //    }
+
+        //    return Ok(cars);
+        //}
+
+        [HttpGet("getAllCarsExceptOwner/{id}")]
+        public async Task<ActionResult<CarToReturnDto>> GetAllCarsExceptOwner(string id)
         {
-            var cars = await _unitOfWork.CarRepository.GetAllAsync();
+            var cars = await _unitOfWork.CarRepository.GetAllCarsExceptOnwerCar(id);
 
             if (cars == null)
             {
@@ -51,27 +91,59 @@ namespace CarRental.APIs.Controllers
 
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/";
 
+            var mappedCars = new List<CarToReturnDto>();
+
             foreach (var car in cars)
             {
-                car.CarImageURL = baseUrl + car.CarImageURL;
-            }
+                var mappedCar = new CarToReturnDto
+                {
+                    Id = car.Id,
+                    Brand = car.Brand,
+                    Model = car.Model,
+                    Year = car.Year,
+                    Color = car.Color,
+                    CarImageURL = baseUrl + car.CarImageURL,
+                    Trans_Type = car.Trans_Type,
+                    Seats = car.Seats,
+                    Cost_Per_Day = car.Cost_Per_Day,
+                    IsAvailable = car.IsAvailable,
+                    CarLocation = car.User.Address,
+                    OwnerId = car.OwnerId
+                };
 
-            return Ok(cars);
+                mappedCars.Add(mappedCar);
+            }
+            return Ok(mappedCars);
+
         }
 
-        [HttpGet("getallcars/{id}")]
-        public async Task<IActionResult> GetByIdAsync(int id)
+        [HttpGet("getDetailsCars/{id}")]
+        public async Task<ActionResult<CarToReturnDto>> GetByIdAsync(int id)
         {
-            var car = await _unitOfWork.CarRepository.GetByIdAsync(id);
+            var car = await _unitOfWork.CarRepository.GetCarById(id);
 
             if (car == null)
                 return NotFound(new { message = "Car are not found" });
 
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/";
 
-            car.CarImageURL = baseUrl + car.CarImageURL;
+            var mappedCar = new CarToReturnDto
+            {
+                Id = car.Id,
+                Brand = car.Brand,
+                Model = car.Model,
+                Year = car.Year,
+                Color = car.Color,
+                CarImageURL = baseUrl + car.CarImageURL,
+                Trans_Type = car.Trans_Type,
+                Seats = car.Seats,
+                Cost_Per_Day = car.Cost_Per_Day,
+                IsAvailable = car.IsAvailable,
+                CarLocation = car.User.Address,
+                OwnerId = car.OwnerId
+            };
 
-            return Ok(car);
+            return Ok(mappedCar);
         }
 
         //[Authorize]
@@ -127,6 +199,28 @@ namespace CarRental.APIs.Controllers
             await _unitOfWork.CarRepository.Update(car);
 
             return Ok(new { message = "Car is updated successfully", car = car });
+        }
+
+        [HttpGet("cars-count")]
+        public async Task<ActionResult<int>> CountOfBookings()
+        {
+            var cars = await _unitOfWork.CarRepository.GetAllAsync();
+
+            if (cars is null)
+                return NotFound(new { message = "Cars are not found" });
+
+            int totalCars = cars.Count();
+            int availableCars = cars.Count(c => c.IsAvailable == true);
+            int unavailableCars = cars.Count(c => c.IsAvailable == false);
+
+            var counts = new
+            {
+                TotalCars = totalCars,
+                AvailableCars = availableCars,
+                UnavailableCars = unavailableCars
+            };
+
+            return Ok(counts);
         }
 
         //[Authorize]

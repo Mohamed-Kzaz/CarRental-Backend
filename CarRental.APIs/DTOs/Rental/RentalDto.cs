@@ -15,8 +15,6 @@ namespace CarRental.APIs.DTOs.Rental
 
         [Required(ErrorMessage = "Ret Location is required!")]
         public string Ret_Location { get; set; }
-        public DateTime Pay_Date { get; set; } 
-        public int Trans_Id { get; set; }
         public string ClientId { get; set; }
         public int CarId { get; set; }
     }

@@ -13,5 +13,9 @@ namespace CarRental.Core.Repositories
 
         Task<IList<Rental>> GetAllRentalsForClient(string clientId);
 
+        Task<IList<Rental>> GetAllReqForCarById(int carId);
+
+        Task<IList<Rental>> GetAllReqPendAndRejForCarById(int carId);
+
     }
 }

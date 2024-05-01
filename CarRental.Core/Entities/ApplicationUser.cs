@@ -9,10 +9,12 @@ namespace CarRental.Core.Entities
 {
     public class ApplicationUser : IdentityUser
     {
+        public string ImageProfileURl { get; set; }
         public string FName { get; set; }
         public string LName { get; set; }
         public string Address { get; set; }
         public string DrivingLicURl { get; set; }
+        public string NationalIdURl { get; set; }
         public DateTime DOB { get; set; }
 
         // For Owner

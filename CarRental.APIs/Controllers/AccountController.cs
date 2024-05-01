@@ -1,4 +1,5 @@
 ﻿using CarRental.APIs.DTOs.Account;
+using CarRental.APIs.DTOs.Rental;
 using CarRental.APIs.Helper;
 using CarRental.Core.Entities;
 using CarRental.Core.Services;
@@ -16,20 +17,23 @@ namespace CarRental.APIs.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ITokenService _tokenService;
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
+            RoleManager<IdentityRole> roleManager,
             ITokenService tokenService
             )
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
             _tokenService = tokenService;
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult> Register([FromForm]RegisterDto model)
+        public async Task<ActionResult> Register([FromForm] RegisterDto model)
         {
             if (CheckEmailExists(model.Email).Result.Value)
                 return BadRequest(new { Message = "Email is already exist" });
@@ -37,10 +41,15 @@ namespace CarRental.APIs.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var fileName = DocumentSettings.UploadFile(model.DrivingLic, "images");
+            var drivingLic = DocumentSettings.UploadFile(model.DrivingLic, "images");
+
+            var imageProfile = DocumentSettings.UploadFile(model.ImageProfile, "images");
+
+            var nationalId = DocumentSettings.UploadFile(model.NationalIdImage, "images");
 
             var user = new ApplicationUser()
             {
+                ImageProfileURl = imageProfile,
                 FName = model.FName,
                 LName = model.LName,
                 Email = model.Email,
@@ -48,17 +57,18 @@ namespace CarRental.APIs.Controllers
                 UserName = model.Email.Split('@')[0],
                 PhoneNumber = model.PhoneNumber,
                 DOB = model.DOB,
-                DrivingLicURl = fileName,
+                DrivingLicURl = drivingLic,
+                NationalIdURl = nationalId,
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (!result.Succeeded)
-                return BadRequest(new { Message = "Something wrong happened when register!"});
+                return BadRequest(new { Message = "Something wrong happened when register!" });
 
             await _userManager.AddToRoleAsync(user, "User");
 
-            return Ok(new {message="success"});
+            return Ok(new { message = "success" });
         }
 
         [HttpPost("login")]
@@ -67,7 +77,7 @@ namespace CarRental.APIs.Controllers
             var user = await _userManager.FindByEmailAsync(model.Email);
 
             if (user is null)
-                return Unauthorized(new {Message = "Email is not exist"});
+                return Unauthorized(new { Message = "Email is not exist" });
 
             var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
 
@@ -76,7 +86,7 @@ namespace CarRental.APIs.Controllers
 
             return Ok(new UserDto()
             {
-                Id=user.Id,
+                Id = user.Id,
                 UserName = user.UserName,
                 Token = await _tokenService.CreateTokenAsync(user, _userManager),
                 Message = "success"
@@ -103,6 +113,57 @@ namespace CarRental.APIs.Controllers
                 return Ok(new { Message = "Password changed successfully" });
 
             return BadRequest(ModelState);
+        }
+
+        [HttpGet("get-all-users")]
+        public async Task<ActionResult<UserToReturnDto>> GetAllUsers()
+        {
+            var userRole = await _roleManager.FindByNameAsync("User");
+
+            if (userRole is null)
+                return NotFound(new { message = "There are no users" });
+
+            var users = await _userManager.GetUsersInRoleAsync(userRole.Name);
+
+            var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/";
+
+            var mappedUsers = new List<UserToReturnDto>();
+
+            foreach (var user in users)
+            {
+                var mappedUser = new UserToReturnDto
+                {
+                    Id = user.Id,
+                    FName = user.FName,
+                    LName = user.LName,
+                    Email = user.Email,
+                    PhoneNumber = user.PhoneNumber,
+                    Address = user.Address,
+                    DOB = user.DOB,
+                    DrivingLicURl = baseUrl + user.DrivingLicURl
+
+                };
+
+                mappedUsers.Add(mappedUser);
+            }
+            return Ok(mappedUsers);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteUser(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+
+            if (user == null)
+            {
+                return NotFound(new { Message = "User is not exist" });
+            }
+
+            DocumentSettings.DeleteFile(user.DrivingLicURl, "images");
+
+            await _userManager.DeleteAsync(user);
+
+            return Ok(new { Message = "User deleted successfully" });
         }
 
         [HttpGet("emailexists")]

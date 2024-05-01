@@ -1,4 +1,6 @@
-﻿namespace CarRental.APIs.DTOs.Rental
+﻿using CarRental.Core.Entities.Enum;
+
+namespace CarRental.APIs.DTOs.Rental
 {
     public class RentalToReturnDto
     {
@@ -7,6 +9,7 @@
         public int Total_Cost { get; set; }
         public string Pick_Location { get; set; }
         public string Ret_Location { get; set; }
+        public RentalStatus Status { get; set; }
         public string CarImageURL { get; set; }
     }
 }

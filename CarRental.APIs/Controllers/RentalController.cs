@@ -2,6 +2,7 @@
 using CarRental.APIs.DTOs.Review;
 using CarRental.Core;
 using CarRental.Core.Entities;
+using CarRental.Core.Entities.Enum;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,6 +42,7 @@ namespace CarRental.APIs.Controllers
                     Total_Cost = rental.Total_Cost,
                     Pick_Location = rental.Pick_Location,
                     Ret_Location = rental.Ret_Location,
+                    Status = rental.Status,
                     CarImageURL = baseUrl + rental.Car.CarImageURL
                 };
 
@@ -49,37 +51,73 @@ namespace CarRental.APIs.Controllers
             return Ok(mappedRentals);
         }
 
+        [HttpGet("getAllReqForCarById/{id}")]
+        public async Task<ActionResult<RequestsForCarOwner>> GetAllReqForCarById(int id)
+        {
+            var requests = await _unitOfWork.RentalRepository.GetAllReqForCarById(id);
+
+            if (requests == null)
+            {
+                return NotFound(new { message = "This car has no requests" });
+            }
+
+            var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/";
+
+            var mappedRequests = new List<RequestsForCarOwner>();
+
+            foreach (var request in requests)
+            {
+                var mappedRequest = new RequestsForCarOwner
+                {
+                    Id = request.Id,
+                    Start_Date = request.Start_Date,
+                    End_Date = request.End_Date,
+                    Pick_Location = request.Pick_Location,
+                    Ret_Location = request.Ret_Location,
+                    TotalCost = request.Total_Cost,
+                    RentalDays = _unitOfWork.RentalRepository.GetTotalDays(request.Start_Date, request.End_Date),
+                    Status = request.Status,
+
+                    FullName = request.User.FName + " " + request.User.FName,
+                    PhoneNumber = request.User.PhoneNumber,
+                    Address = request.User.Address,
+                    DrivingLic = baseUrl + request.User.DrivingLicURl
+                };
+
+                mappedRequests.Add(mappedRequest);
+            }
+            return Ok(mappedRequests);
+        }
+
+
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] RentalDto model)
+        public async Task<IActionResult> Add(RentalDto rentalDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var car = await _unitOfWork.CarRepository.GetByIdAsync(model.CarId);
+            var car = await _unitOfWork.CarRepository.GetByIdAsync(rentalDto.CarId);
 
             if (!car.IsAvailable is true)
                 return BadRequest(new { message = "Car is not available now" });
 
-            var totalCost = GetTotalPrice(car.Cost_Per_Day, model.Start_Date, model.End_Date);
+            var totalCost = GetTotalPrice(car.Cost_Per_Day, rentalDto.Start_Date, rentalDto.End_Date);
 
             Rental rental = new Rental()
             {
-                Start_Date = model.Start_Date,
-                End_Date = model.End_Date,
+                Start_Date = rentalDto.Start_Date,
+                End_Date = rentalDto.End_Date,
+                Pick_Location = rentalDto.Pick_Location,
+                Ret_Location = rentalDto.Ret_Location,
                 Total_Cost = totalCost,
-                Pick_Location = model.Pick_Location,
-                Ret_Location = model.Ret_Location,
-                Pay_Date = model.Pay_Date,
-                Trans_Id = model.Trans_Id,
-                CarId = model.CarId,
-                ClientId = model.ClientId
+                Status = RentalStatus.Pending,
+                CarId = rentalDto.CarId,
+                ClientId = rentalDto.ClientId,
             };
 
             await _unitOfWork.RentalRepository.Add(rental);
 
-            await UpdateAvailability(model.CarId);
-
-            return Ok(new { message = "Rental is added successfully", Availability = car.IsAvailable, RentalID = rental.Id, TotalCost = totalCost });
+            return Ok(new { message = "Rental is added successfully", RentalID = rental.Id, });
         }
 
         [HttpGet("getTotalPrice")]
@@ -102,6 +140,51 @@ namespace CarRental.APIs.Controllers
             await _unitOfWork.CarRepository.Update(car);
 
             return Ok(new { Car = car, message = "success" });
+        }
+
+        [HttpPut("RejectRequest/{id}")]
+        public async Task<IActionResult> RejectRequest(int id)
+        {
+            var rental = await _unitOfWork.RentalRepository.GetByIdAsync(id);
+
+            rental.Status = RentalStatus.Rejected;
+
+            await _unitOfWork.RentalRepository.Update(rental);
+
+            return Ok(new { message = "success" });
+        }
+
+        [HttpPut("PaymentRequest/{id}")]
+        public async Task<IActionResult> PaymentRequest(int id)
+        {
+            var rental = await _unitOfWork.RentalRepository.GetByIdAsync(id);
+
+            rental.Status = RentalStatus.WaitingForPayment;
+
+            await _unitOfWork.RentalRepository.Update(rental);
+
+            return Ok(new { message = "success" });
+        }
+
+        [HttpPut("ConfirmRequest/{id}")]
+        public async Task<IActionResult> ConfirmRequest(int id)
+        {
+            var rental = await _unitOfWork.RentalRepository.GetByIdAsync(id);
+
+            rental.Status = RentalStatus.Confirmed;
+
+            await _unitOfWork.RentalRepository.Update(rental);
+
+            await UpdateAvailability(rental.CarId);
+
+            var rentals = await _unitOfWork.RentalRepository.GetAllReqPendAndRejForCarById(rental.CarId);
+
+            foreach (var rent in rentals)
+            {
+                await _unitOfWork.RentalRepository.Delete(rent);
+            }
+
+            return Ok(new { message = "success" });
         }
 
     }
