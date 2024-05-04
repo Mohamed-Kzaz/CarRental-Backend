@@ -59,25 +59,25 @@ namespace CarRental.APIs.Controllers
         }
 
         //[Authorize("Admin")]
-        //[HttpGet]
-        //public async Task<IActionResult> GetAllAsync()
-        //{
-        //    var cars = await _unitOfWork.CarRepository.GetAllAsync();
+        [HttpGet]
+        public async Task<IActionResult> GetAllAsync()
+        {
+            var cars = await _unitOfWork.CarRepository.GetAllAsync();
 
-        //    if (cars == null)
-        //    {
-        //        return NotFound(new { message = "Cars are not found" });
-        //    }
+            if (cars == null)
+            {
+                return NotFound(new { message = "Cars are not found" });
+            }
 
-        //    var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/";
+            var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/";
 
-        //    foreach (var car in cars)
-        //    {
-        //        car.CarImageURL = baseUrl + car.CarImageURL;
-        //    }
+            foreach (var car in cars)
+            {
+                car.CarImageURL = baseUrl + car.CarImageURL;
+            }
 
-        //    return Ok(cars);
-        //}
+            return Ok(cars);
+        }
 
         [HttpGet("getAllCarsExceptOwner/{id}")]
         public async Task<ActionResult<CarToReturnDto>> GetAllCarsExceptOwner(string id)

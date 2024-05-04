@@ -9,7 +9,7 @@ namespace CarRental.APIs.DTOs.Rental
         public DateTime End_Date { get; set; }
         public string Pick_Location { get; set; }
         public string Ret_Location { get; set; }
-        public int TotalCost { get; set; }
+        public decimal TotalCost { get; set; }
         public RentalStatus Status { get; set; }
         public int RentalDays { get; set; }
 

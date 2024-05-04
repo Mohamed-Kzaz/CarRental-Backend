@@ -32,7 +32,7 @@ namespace CarRental.Repository
 
         public async Task<IList<Rental>> GetAllReqForCarById(int carId)
         {
-            return await dbContext.Rentals.Include(r => r.User).Where(r => r.CarId == carId && r.Status == RentalStatus.Pending).ToListAsync();
+            return await dbContext.Rentals.Include(r => r.User).Where(r => r.CarId == carId).ToListAsync();
         }
 
         public async Task<IList<Rental>> GetAllReqPendAndRejForCarById(int carId)
@@ -40,5 +40,24 @@ namespace CarRental.Repository
             return await dbContext.Rentals.Where(r => r.CarId == carId && r.Status == RentalStatus.Pending || r.Status == RentalStatus.Rejected).ToListAsync();
         }
 
+        public async Task<IList<Rental>> GetAllPendingRentals()
+        {
+            return await dbContext.Rentals.Include(r => r.User).Include(r => r.Car).ThenInclude(c => c.User).Where(r => r.Status == RentalStatus.Pending).ToListAsync();
+        }
+
+        public async Task<IList<Rental>> GetAllWaitingRentals()
+        {
+            return await dbContext.Rentals.Include(r => r.User).Include(r => r.Car).ThenInclude(c => c.User).Where(r => r.Status == RentalStatus.WaitingForPayment).ToListAsync();
+        }
+
+        public async Task<IList<Rental>> GetAllConfirmedRentals()
+        {
+            return await dbContext.Rentals.Include(r => r.User).Include(r => r.Car).ThenInclude(c => c.User).Where(r => r.Status == RentalStatus.Confirmed).ToListAsync();
+        }
+
+        public async Task<IList<Rental>> GetAllRejectedRentals()
+        {
+            return await dbContext.Rentals.Include(r => r.User).Include(r => r.Car).ThenInclude(c => c.User).Where(r => r.Status == RentalStatus.Rejected).ToListAsync();
+        }
     }
 }

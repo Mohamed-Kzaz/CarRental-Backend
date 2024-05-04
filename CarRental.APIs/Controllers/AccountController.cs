@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using System.Security.Claims;
 
 namespace CarRental.APIs.Controllers
@@ -84,10 +85,13 @@ namespace CarRental.APIs.Controllers
             if (!result.Succeeded)
                 return Unauthorized(new { Message = "Password is not Valid!!" });
 
+            var userRoles = await _userManager.GetRolesAsync(user);
+
             return Ok(new UserDto()
             {
                 Id = user.Id,
                 UserName = user.UserName,
+                Role = string.Join(",", userRoles),
                 Token = await _tokenService.CreateTokenAsync(user, _userManager),
                 Message = "success"
             });
@@ -134,14 +138,15 @@ namespace CarRental.APIs.Controllers
                 var mappedUser = new UserToReturnDto
                 {
                     Id = user.Id,
+                    ProfileURl = baseUrl + user.ImageProfileURl,
                     FName = user.FName,
                     LName = user.LName,
                     Email = user.Email,
                     PhoneNumber = user.PhoneNumber,
                     Address = user.Address,
                     DOB = user.DOB,
-                    DrivingLicURl = baseUrl + user.DrivingLicURl
-
+                    DrivingLicURl = baseUrl + user.DrivingLicURl,
+                    NationalIdURl = baseUrl + user.NationalIdURl
                 };
 
                 mappedUsers.Add(mappedUser);

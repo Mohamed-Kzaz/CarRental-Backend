@@ -17,6 +17,13 @@ namespace CarRental.Repository.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<Rental>().Property(p => p.Total_Cost).HasColumnType("decimal(18,2)");
+        }
+
 
         public DbSet<Car> Cars { get; set; }
         public DbSet<Rental> Rentals { get; set; }

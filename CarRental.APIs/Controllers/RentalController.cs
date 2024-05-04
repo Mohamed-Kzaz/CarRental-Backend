@@ -19,6 +19,135 @@ namespace CarRental.APIs.Controllers
             _unitOfWork = unitOfWork;
         }
 
+        [HttpGet("getAllPendingRentals")]
+        public async Task<IActionResult> GetAllPendingRentals()
+        {
+            var pendingRentals = await _unitOfWork.RentalRepository.GetAllPendingRentals();
+
+            if (pendingRentals == null)
+            {
+                return NotFound(new { message = "You have not pending rentals yet" });
+            }
+
+            var mappedRentals = new List<RentalToReturnAdmin>();
+
+            foreach (var rental in pendingRentals)
+            {
+                var mappedRental = new RentalToReturnAdmin
+                {
+                    Start_Date = rental.Start_Date,
+                    End_Date = rental.End_Date,
+                    Total_Cost = rental.Total_Cost,
+                    Pick_Location = rental.Pick_Location,
+                    Ret_Location = rental.Ret_Location,
+                    Status = rental.Status,
+
+                    FullNameCarOwner = rental.Car.User.FName + " " + rental.Car.User.LName,
+                    FullNameClient = rental.User.FName + " " + rental.User.LName,
+                };
+
+                mappedRentals.Add(mappedRental);
+            }
+            return Ok(mappedRentals);
+        }
+
+        [HttpGet("getAllWaitingRentals")]
+        public async Task<IActionResult> GetAllWaitingRentals()
+        {
+            var waitingRentals = await _unitOfWork.RentalRepository.GetAllWaitingRentals();
+
+            if (waitingRentals == null)
+            {
+                return NotFound(new { message = "You have not waiting rentals yet" });
+            }
+
+            var mappedRentals = new List<RentalToReturnAdmin>();
+
+            foreach (var rental in waitingRentals)
+            {
+                var mappedRental = new RentalToReturnAdmin
+                {
+                    Start_Date = rental.Start_Date,
+                    End_Date = rental.End_Date,
+                    Total_Cost = rental.Total_Cost,
+                    Pick_Location = rental.Pick_Location,
+                    Ret_Location = rental.Ret_Location,
+                    Status = rental.Status,
+
+                    FullNameCarOwner = rental.Car.User.FName + " " + rental.Car.User.LName,
+                    FullNameClient = rental.User.FName + " " + rental.User.LName,
+                };
+
+                mappedRentals.Add(mappedRental);
+            }
+            return Ok(mappedRentals);
+        }
+
+        [HttpGet("getAllConfirmedRentals")]
+        public async Task<IActionResult> GetAllConfirmedRentals()
+        {
+            var confirmedRentals = await _unitOfWork.RentalRepository.GetAllConfirmedRentals();
+
+            if (confirmedRentals == null)
+            {
+                return NotFound(new { message = "You have not confirmed rentals yet" });
+            }
+
+            var mappedRentals = new List<RentalToReturnAdmin>();
+
+            foreach (var rental in confirmedRentals)
+            {
+                var mappedRental = new RentalToReturnAdmin
+                {
+                    Start_Date = rental.Start_Date,
+                    End_Date = rental.End_Date,
+                    Total_Cost = rental.Total_Cost,
+                    Pick_Location = rental.Pick_Location,
+                    Ret_Location = rental.Ret_Location,
+                    Status = rental.Status,
+
+                    FullNameCarOwner = rental.Car.User.FName + " " + rental.Car.User.LName,
+                    FullNameClient = rental.User.FName + " " + rental.User.LName,
+                };
+
+                mappedRentals.Add(mappedRental);
+            }
+            return Ok(mappedRentals);
+        }
+
+        [HttpGet("getAllRejectedRentals")]
+        public async Task<IActionResult> GetAllRejectedRentals()
+        {
+            var rejectedRentals = await _unitOfWork.RentalRepository.GetAllRejectedRentals();
+
+            if (rejectedRentals == null)
+            {
+                return NotFound(new { message = "You have not rejected rentals yet" });
+            }
+
+            var mappedRentals = new List<RentalToReturnAdmin>();
+
+            foreach (var rental in rejectedRentals)
+            {
+                var mappedRental = new RentalToReturnAdmin
+                {
+                    Start_Date = rental.Start_Date,
+                    End_Date = rental.End_Date,
+                    Total_Cost = rental.Total_Cost,
+                    Pick_Location = rental.Pick_Location,
+                    Ret_Location = rental.Ret_Location,
+                    Status = rental.Status,
+
+                    FullNameCarOwner = rental.Car.User.FName + " " + rental.Car.User.LName,
+                    FullNameClient = rental.User.FName + " " + rental.User.LName,
+                };
+
+                mappedRentals.Add(mappedRental);
+            }
+            return Ok(mappedRentals);
+        }
+
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAllRentalsByClientId(string id)
         {
@@ -109,7 +238,7 @@ namespace CarRental.APIs.Controllers
                 End_Date = rentalDto.End_Date,
                 Pick_Location = rentalDto.Pick_Location,
                 Ret_Location = rentalDto.Ret_Location,
-                Total_Cost = totalCost,
+                Total_Cost = totalCost + (decimal)(totalCost * 0.05),
                 Status = RentalStatus.Pending,
                 CarId = rentalDto.CarId,
                 ClientId = rentalDto.ClientId,
@@ -186,6 +315,7 @@ namespace CarRental.APIs.Controllers
 
             return Ok(new { message = "success" });
         }
+
 
     }
 }

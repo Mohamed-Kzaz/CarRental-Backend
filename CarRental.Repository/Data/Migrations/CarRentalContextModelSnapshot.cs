@@ -196,8 +196,8 @@ namespace CarRental.Repository.Data.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
-                    b.Property<int>("Total_Cost")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Total_Cost")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 

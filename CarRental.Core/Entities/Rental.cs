@@ -15,7 +15,7 @@ namespace CarRental.Core.Entities
         public DateTime End_Date { get; set; }
         public string Pick_Location { get; set; }
         public string Ret_Location { get; set; }
-        public int Total_Cost { get; set; }
+        public decimal Total_Cost { get; set; }
         public RentalStatus Status { get; set; }
 
         [ForeignKey("User")]
