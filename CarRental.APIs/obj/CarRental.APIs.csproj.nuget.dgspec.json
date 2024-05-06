@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\CarRental.APIs.csproj": {}
+    "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.APIs\\CarRental.APIs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\CarRental.APIs.csproj": {
+    "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.APIs\\CarRental.APIs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\CarRental.APIs.csproj",
+        "projectUniqueName": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.APIs\\CarRental.APIs.csproj",
         "projectName": "CarRental.APIs",
-        "projectPath": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\CarRental.APIs.csproj",
-        "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.APIs\\obj\\",
+        "projectPath": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.APIs\\CarRental.APIs.csproj",
+        "packagesPath": "C:\\Users\\On TraCk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.APIs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\moham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\On TraCk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,14 +28,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Core\\CarRental.Core.csproj": {
-                "projectPath": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Core\\CarRental.Core.csproj"
+              "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Core\\CarRental.Core.csproj": {
+                "projectPath": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Core\\CarRental.Core.csproj"
               },
-              "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Repository\\CarRental.Repository.csproj": {
-                "projectPath": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Repository\\CarRental.Repository.csproj"
+              "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Repository\\CarRental.Repository.csproj": {
+                "projectPath": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Repository\\CarRental.Repository.csproj"
               },
-              "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Service\\CarRental.Service.csproj": {
-                "projectPath": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Service\\CarRental.Service.csproj"
+              "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Service\\CarRental.Service.csproj": {
+                "projectPath": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Service\\CarRental.Service.csproj"
               }
             }
           }
@@ -44,6 +44,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -88,21 +93,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Core\\CarRental.Core.csproj": {
+    "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Core\\CarRental.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Core\\CarRental.Core.csproj",
+        "projectUniqueName": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Core\\CarRental.Core.csproj",
         "projectName": "CarRental.Core",
-        "projectPath": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Core\\CarRental.Core.csproj",
-        "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Core\\obj\\",
+        "projectPath": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Core\\CarRental.Core.csproj",
+        "packagesPath": "C:\\Users\\On TraCk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\moham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\On TraCk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -122,6 +127,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -153,21 +163,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Repository\\CarRental.Repository.csproj": {
+    "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Repository\\CarRental.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Repository\\CarRental.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Repository\\CarRental.Repository.csproj",
         "projectName": "CarRental.Repository",
-        "projectPath": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Repository\\CarRental.Repository.csproj",
-        "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Repository\\obj\\",
+        "projectPath": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Repository\\CarRental.Repository.csproj",
+        "packagesPath": "C:\\Users\\On TraCk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\moham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\On TraCk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -181,8 +191,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Core\\CarRental.Core.csproj": {
-                "projectPath": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Core\\CarRental.Core.csproj"
+              "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Core\\CarRental.Core.csproj": {
+                "projectPath": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Core\\CarRental.Core.csproj"
               }
             }
           }
@@ -191,6 +201,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -218,21 +233,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Service\\CarRental.Service.csproj": {
+    "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Service\\CarRental.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Service\\CarRental.Service.csproj",
+        "projectUniqueName": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Service\\CarRental.Service.csproj",
         "projectName": "CarRental.Service",
-        "projectPath": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Service\\CarRental.Service.csproj",
-        "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Service\\obj\\",
+        "projectPath": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Service\\CarRental.Service.csproj",
+        "packagesPath": "C:\\Users\\On TraCk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\moham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\On TraCk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -246,8 +261,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Core\\CarRental.Core.csproj": {
-                "projectPath": "C:\\Users\\moham\\OneDrive\\Desktop\\ASP API\\CarRental\\CarRental.Core\\CarRental.Core.csproj"
+              "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Core\\CarRental.Core.csproj": {
+                "projectPath": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Core\\CarRental.Core.csproj"
               }
             }
           }
@@ -256,6 +271,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -287,7 +307,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

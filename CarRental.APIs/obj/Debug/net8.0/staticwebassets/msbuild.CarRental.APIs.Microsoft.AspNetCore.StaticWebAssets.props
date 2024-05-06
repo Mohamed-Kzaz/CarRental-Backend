@@ -1,5 +1,37 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\files\images\1a226ded-8b2e-4d02-9c43-4f34b9f7cccacar-rent-5.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>CarRental.APIs</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CarRental.APIs</BasePath>
+      <RelativePath>files/images/1a226ded-8b2e-4d02-9c43-4f34b9f7cccacar-rent-5.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\files\images\1a226ded-8b2e-4d02-9c43-4f34b9f7cccacar-rent-5.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\files\images\3ce840cb-44f1-4cd6-b652-4d3970506614WhatsApp Image 2024-03-20 at 16.27.29_fe86f074.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>CarRental.APIs</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CarRental.APIs</BasePath>
+      <RelativePath>files/images/3ce840cb-44f1-4cd6-b652-4d3970506614WhatsApp Image 2024-03-20 at 16.27.29_fe86f074.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\files\images\3ce840cb-44f1-4cd6-b652-4d3970506614WhatsApp Image 2024-03-20 at 16.27.29_fe86f074.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\files\images\6b427ea2-63e3-4fb8-b5b7-fc151fad6f31Formal.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>CarRental.APIs</SourceId>
@@ -15,6 +47,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\files\images\6b427ea2-63e3-4fb8-b5b7-fc151fad6f31Formal.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\files\images\de1b80c9-9bbe-444d-bc5d-f4b97c35fe65car-rent-5.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>CarRental.APIs</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CarRental.APIs</BasePath>
+      <RelativePath>files/images/de1b80c9-9bbe-444d-bc5d-f4b97c35fe65car-rent-5.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\files\images\de1b80c9-9bbe-444d-bc5d-f4b97c35fe65car-rent-5.png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\files\images\f5d628fb-c34f-41a4-ba55-9a06b7c84b61BMW.jpg))">
       <SourceType>Package</SourceType>

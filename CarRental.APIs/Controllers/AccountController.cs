@@ -153,8 +153,7 @@ namespace CarRental.APIs.Controllers
             }
             return Ok(mappedUsers);
         }
-
-        [HttpDelete]
+        [HttpDelete("deleteUser")]
         public async Task<IActionResult> DeleteUser(string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);
