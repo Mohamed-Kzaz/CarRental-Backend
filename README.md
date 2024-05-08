@@ -25,7 +25,7 @@ The Car Rental ASP.NET RESTful API is a project designed to facilitate the renta
 
 To run the Car Rental ASP.NET RESTful API locally, follow these steps:
 
-1. **Clone Repository:** `git clone https://github.com/yourusername/CarRental-Backend.git`
+1. **Clone Repository:** `git clone https://github.com/Mohamed-Kzaz/CarRental-Backend.git`
 2. **Install .NET 8 SDK:** [Download and install .NET 8 SDK](https://dotnet.microsoft.com/download)
 3. **Set Up Database:** [Provide instructions for setting up the database schema and configurations]
 4. **Configure Environment:** Set up environment variables for database connection, JWT secret, etc.
