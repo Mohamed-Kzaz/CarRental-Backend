@@ -37,10 +37,12 @@ namespace CarRental.Repository
             {
                 ApplicationUser user = new ApplicationUser()
                 {
+                    ImageProfileURl = "",
                     FName = "Mohamed",
                     LName = "Elkazaz",
                     Address = "Portsaid",
                     DrivingLicURl = "",
+                    NationalIdURl = "",
                     Email = "elkazaz@gmail.com",
                     DOB = new DateTime(2000, 1, 9),
                     UserName = "elkazaz",
