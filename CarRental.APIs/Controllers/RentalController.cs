@@ -166,6 +166,7 @@ namespace CarRental.APIs.Controllers
             {
                 var mappedRental = new RentalToReturnDto
                 {
+                    Id=rental.Id,
                     Start_Date = rental.Start_Date,
                     End_Date = rental.End_Date,
                     Total_Cost = rental.Total_Cost,

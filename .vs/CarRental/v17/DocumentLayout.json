@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA2194B7-4032-4BEB-81D5-E831363584A9}|CarRental.APIs\\CarRental.APIs.csproj|c:\\users\\on track\\desktop\\carrental\\carrental-backend\\carrental.apis\\controllers\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA2194B7-4032-4BEB-81D5-E831363584A9}|CarRental.APIs\\CarRental.APIs.csproj|solutionrelative:carrental.apis\\controllers\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D191343D-5BC5-4ADB-AC77-6FC71732532C}|CarRental.Repository\\CarRental.Repository.csproj|c:\\users\\on track\\desktop\\carrental\\carrental-backend\\carrental.repository\\identityseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D191343D-5BC5-4ADB-AC77-6FC71732532C}|CarRental.Repository\\CarRental.Repository.csproj|solutionrelative:carrental.repository\\identityseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA2194B7-4032-4BEB-81D5-E831363584A9}|CarRental.APIs\\CarRental.APIs.csproj|c:\\users\\on track\\desktop\\carrental\\carrental-backend\\carrental.apis\\controllers\\rentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA2194B7-4032-4BEB-81D5-E831363584A9}|CarRental.APIs\\CarRental.APIs.csproj|solutionrelative:carrental.apis\\controllers\\rentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA2194B7-4032-4BEB-81D5-E831363584A9}|CarRental.APIs\\CarRental.APIs.csproj|c:\\users\\on track\\desktop\\carrental\\carrental-backend\\carrental.apis\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA2194B7-4032-4BEB-81D5-E831363584A9}|CarRental.APIs\\CarRental.APIs.csproj|solutionrelative:carrental.apis\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,27 +31,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RentalController.cs",
-              "DocumentMoniker": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.APIs\\Controllers\\RentalController.cs",
-              "RelativeDocumentMoniker": "CarRental.APIs\\Controllers\\RentalController.cs",
-              "ToolTip": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.APIs\\Controllers\\RentalController.cs",
-              "RelativeToolTip": "CarRental.APIs\\Controllers\\RentalController.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAAACIAAAAuAAAA",
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.APIs\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "CarRental.APIs\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.APIs\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "CarRental.APIs\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAJIAAAAAAAAAAAAAAJoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T23:17:35.318Z",
+              "WhenOpened": "2024-05-05T14:38:45.98Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CarController.cs",
-              "DocumentMoniker": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.APIs\\Controllers\\CarController.cs",
-              "RelativeDocumentMoniker": "CarRental.APIs\\Controllers\\CarController.cs",
-              "ToolTip": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.APIs\\Controllers\\CarController.cs",
-              "RelativeToolTip": "CarRental.APIs\\Controllers\\CarController.cs",
-              "ViewState": "AQIAAHsAAAAAAAAAAAAAAIMAAAAVAAAA",
+              "Title": "IdentitySeed.cs",
+              "DocumentMoniker": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Repository\\IdentitySeed.cs",
+              "RelativeDocumentMoniker": "CarRental.Repository\\IdentitySeed.cs",
+              "ToolTip": "C:\\Users\\On TraCk\\Desktop\\CarRental\\CarRental-Backend\\CarRental.Repository\\IdentitySeed.cs",
+              "RelativeToolTip": "CarRental.Repository\\IdentitySeed.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAACAAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T23:06:52.29Z",
+              "WhenOpened": "2024-05-05T13:40:42.514Z",
               "EditorCaption": ""
             }
           ]
