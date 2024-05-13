@@ -42,7 +42,7 @@ namespace CarRental.APIs.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add([FromForm] ReviewDto model)
+        public async Task<IActionResult> Add([FromBody] ReviewDto model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
